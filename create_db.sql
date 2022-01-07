@@ -250,9 +250,14 @@ CREATE TABLE GP_EMP_REA_PHASE(
 #------------------------------------------------------------
 
 CREATE TABLE GP_ADDRESS(
-        ADDRESS_ID Int  Auto_increment  NOT NULL ,
-        ORG_ID     Int NOT NULL ,
-        EMP_ID     Int
+        ADDRESS_ID    Int  Auto_increment  NOT NULL ,
+        STREET_NUMBER Int NOT NULL ,
+        STREET_LABEL  Varchar (250) NOT NULL ,
+        ZIP_CODE      Int NOT NULL ,
+        COUNTRY       Varchar (50) NOT NULL ,
+        IS_MAIN       Bool NOT NULL COMMENT "Si Adresse principale"  ,
+        ORG_ID        Int NOT NULL ,
+        EMP_ID        Int
 	,CONSTRAINT GP_ADDRESS_PK PRIMARY KEY (ADDRESS_ID)
 
 	,CONSTRAINT GP_ADDRESS_GP_ORGANIZATION_FK FOREIGN KEY (ORG_ID) REFERENCES GP_ORGANIZATION(ORG_ID)
@@ -282,4 +287,3 @@ CREATE TABLE GP_TECHNICIAN(
 
 	,CONSTRAINT GP_TECHNICIAN_GP_EMPLOYEE_FK FOREIGN KEY (EMP_ID) REFERENCES GP_EMPLOYEE(EMP_ID)
 )ENGINE=InnoDB;
-
