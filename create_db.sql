@@ -157,7 +157,7 @@ CREATE TABLE GP_PROJECT(
         PROJECT_ID    Int  Auto_increment  NOT NULL ,
         PROJECT_CODE  Varchar (32) NOT NULL ,
         NAME          Varchar (32) NOT NULL ,
-        DESCRIPTION   Varchar NOT NULL ,
+        DESCRIPTION   Varchar (250) NOT NULL ,
         START_DATE    Date NOT NULL ,
         END_DATE      Date NOT NULL ,
         AMOUNT        Real NOT NULL ,
