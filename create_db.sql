@@ -29,16 +29,15 @@ CREATE TABLE GP_EMPLOYEE(
 
 CREATE TABLE GP_SECRETAIRE(
         EMP_ID        Int NOT NULL ,
-        FILE_NUMBER   Varchar (5) NOT NULL ,
-        LASTNAME      Varchar (128) NOT NULL ,
-        FIRSTNAME     Varchar (128) NOT NULL ,
+        FILE_NUMBER   Varchar (5) ,
+        LASTNAME      Varchar (128),
+        FIRSTNAME     Varchar (128),
         PHONE_NUMBER  Int NOT NULL ,
-        PASSWORD      Varchar (32) NOT NULL ,
-        CREATION_DATE Datetime NOT NULL ,
+        PASSWORD      Varchar (32) ,
+        CREATION_DATE Datetime ,
         UPDATE_DATE   Datetime ,
-        EMAIL         Varchar (128) NOT NULL ,
-        LOGIN         Varchar (32) NOT NULL
-	,CONSTRAINT GP_SECRETAIRE_AK UNIQUE (EMAIL,LOGIN)
+        EMAIL         Varchar (128) ,
+        LOGIN         Varchar (32) 
 	,CONSTRAINT GP_SECRETAIRE_PK PRIMARY KEY (EMP_ID)
 
 	,CONSTRAINT GP_SECRETAIRE_GP_EMPLOYEE_FK FOREIGN KEY (EMP_ID) REFERENCES GP_EMPLOYEE(EMP_ID)
@@ -51,16 +50,15 @@ CREATE TABLE GP_SECRETAIRE(
 
 CREATE TABLE GP_COMPTABLE(
         EMP_ID        Int NOT NULL ,
-        FILE_NUMBER   Varchar (5) NOT NULL ,
-        LASTNAME      Varchar (128) NOT NULL ,
-        FIRSTNAME     Varchar (128) NOT NULL ,
+        FILE_NUMBER   Varchar (5) ,
+        LASTNAME      Varchar (128),
+        FIRSTNAME     Varchar (128),
         PHONE_NUMBER  Int NOT NULL ,
-        PASSWORD      Varchar (32) NOT NULL ,
-        CREATION_DATE Datetime NOT NULL ,
+        PASSWORD      Varchar (32),
+        CREATION_DATE Datetime  ,
         UPDATE_DATE   Datetime ,
-        EMAIL         Varchar (128) NOT NULL ,
-        LOGIN         Varchar (32) NOT NULL
-	,CONSTRAINT GP_COMPTABLE_AK UNIQUE (EMAIL,LOGIN)
+        EMAIL         Varchar (128) ,
+        LOGIN         Varchar (32)  
 	,CONSTRAINT GP_COMPTABLE_PK PRIMARY KEY (EMP_ID)
 
 	,CONSTRAINT GP_COMPTABLE_GP_EMPLOYEE_FK FOREIGN KEY (EMP_ID) REFERENCES GP_EMPLOYEE(EMP_ID)
@@ -73,16 +71,15 @@ CREATE TABLE GP_COMPTABLE(
 
 CREATE TABLE GP_CHEF_PROJET(
         EMP_ID        Int NOT NULL ,
-        FILE_NUMBER   Varchar (5) NOT NULL ,
-        LASTNAME      Varchar (128) NOT NULL ,
-        FIRSTNAME     Varchar (128) NOT NULL ,
+        FILE_NUMBER   Varchar (5) ,
+        LASTNAME      Varchar (128) ,
+        FIRSTNAME     Varchar (128) ,
         PHONE_NUMBER  Int NOT NULL ,
-        PASSWORD      Varchar (32) NOT NULL ,
-        CREATION_DATE Datetime NOT NULL ,
+        PASSWORD      Varchar (32)  ,
+        CREATION_DATE Datetime  ,
         UPDATE_DATE   Datetime ,
-        EMAIL         Varchar (128) NOT NULL ,
-        LOGIN         Varchar (32) NOT NULL
-	,CONSTRAINT GP_CHEF_PROJET_AK UNIQUE (EMAIL,LOGIN)
+        EMAIL         Varchar (128)  ,
+        LOGIN         Varchar (32)  
 	,CONSTRAINT GP_CHEF_PROJET_PK PRIMARY KEY (EMP_ID)
 
 	,CONSTRAINT GP_CHEF_PROJET_GP_EMPLOYEE_FK FOREIGN KEY (EMP_ID) REFERENCES GP_EMPLOYEE(EMP_ID)
@@ -95,16 +92,15 @@ CREATE TABLE GP_CHEF_PROJET(
 
 CREATE TABLE GP_ADMIN(
         EMP_ID        Int NOT NULL ,
-        FILE_NUMBER   Varchar (5) NOT NULL ,
-        LASTNAME      Varchar (128) NOT NULL ,
-        FIRSTNAME     Varchar (128) NOT NULL ,
-        PHONE_NUMBER  Int NOT NULL ,
-        PASSWORD      Varchar (32) NOT NULL ,
-        CREATION_DATE Datetime NOT NULL ,
+        FILE_NUMBER   Varchar (5) ,
+        LASTNAME      Varchar (128),
+        FIRSTNAME     Varchar (128),
+        PHONE_NUMBER  Int ,
+        PASSWORD      Varchar (32) ,
+        CREATION_DATE Datetime ,
         UPDATE_DATE   Datetime ,
-        EMAIL         Varchar (128) NOT NULL ,
-        LOGIN         Varchar (32) NOT NULL
-	,CONSTRAINT GP_ADMIN_AK UNIQUE (EMAIL,LOGIN)
+        EMAIL         Varchar (128),
+        LOGIN         Varchar (32) 
 	,CONSTRAINT GP_ADMIN_PK PRIMARY KEY (EMP_ID)
 
 	,CONSTRAINT GP_ADMIN_GP_EMPLOYEE_FK FOREIGN KEY (EMP_ID) REFERENCES GP_EMPLOYEE(EMP_ID)
@@ -117,16 +113,15 @@ CREATE TABLE GP_ADMIN(
 
 CREATE TABLE GP_DIRECTEUR(
         EMP_ID        Int NOT NULL ,
-        FILE_NUMBER   Varchar (5) NOT NULL ,
-        LASTNAME      Varchar (128) NOT NULL ,
-        FIRSTNAME     Varchar (128) NOT NULL ,
+        FILE_NUMBER   Varchar (5) ,
+        LASTNAME      Varchar (128),
+        FIRSTNAME     Varchar (128)  ,
         PHONE_NUMBER  Int NOT NULL ,
-        PASSWORD      Varchar (32) NOT NULL ,
-        CREATION_DATE Datetime NOT NULL ,
+        PASSWORD      Varchar (32),
+        CREATION_DATE Datetime,
         UPDATE_DATE   Datetime ,
-        EMAIL         Varchar (128) NOT NULL ,
-        LOGIN         Varchar (32) NOT NULL
-	,CONSTRAINT GP_DIRECTEUR_AK UNIQUE (EMAIL,LOGIN)
+        EMAIL         Varchar (128),
+        LOGIN         Varchar (32)  
 	,CONSTRAINT GP_DIRECTEUR_PK PRIMARY KEY (EMP_ID)
 
 	,CONSTRAINT GP_DIRECTEUR_GP_EMPLOYEE_FK FOREIGN KEY (EMP_ID) REFERENCES GP_EMPLOYEE(EMP_ID)
@@ -272,17 +267,16 @@ CREATE TABLE GP_ADDRESS(
 CREATE TABLE GP_TECHNICIAN(
         EMP_ID          Int NOT NULL ,
         LAST_DIPLOMA    Varchar (100) ,
-        GRADUATION_YEAR Int NOT NULL COMMENT "Annee d'obtention du dernier diplome"  ,
-        FILE_NUMBER     Varchar (5) NOT NULL ,
-        LASTNAME        Varchar (128) NOT NULL ,
-        FIRSTNAME       Varchar (128) NOT NULL ,
-        PHONE_NUMBER    Int NOT NULL ,
-        PASSWORD        Varchar (32) NOT NULL ,
-        CREATION_DATE   Datetime NOT NULL ,
+        GRADUATION_YEAR Int  COMMENT "Annee d'obtention du dernier diplome"  ,
+        FILE_NUMBER     Varchar (5) ,
+        LASTNAME        Varchar (128),
+        FIRSTNAME       Varchar (128),
+        PHONE_NUMBER    Int,
+        PASSWORD        Varchar (32),
+        CREATION_DATE   Datetime ,
         UPDATE_DATE     Datetime ,
-        EMAIL           Varchar (128) NOT NULL ,
-        LOGIN           Varchar (32) NOT NULL
-	,CONSTRAINT GP_TECHNICIAN_AK UNIQUE (EMAIL,LOGIN)
+        EMAIL           Varchar (128) ,
+        LOGIN           Varchar (32) 
 	,CONSTRAINT GP_TECHNICIAN_PK PRIMARY KEY (EMP_ID)
 
 	,CONSTRAINT GP_TECHNICIAN_GP_EMPLOYEE_FK FOREIGN KEY (EMP_ID) REFERENCES GP_EMPLOYEE(EMP_ID)
